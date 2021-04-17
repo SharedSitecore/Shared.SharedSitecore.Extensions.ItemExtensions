@@ -1,2 +1,3 @@
 # SharedSitecore.Extensions.ItemExtensions
-Sitecore Item Extensions: GetTemplate, many more to come
+
+Sitecore Item Extensions: GetTemplate, IsDerived, many more to come

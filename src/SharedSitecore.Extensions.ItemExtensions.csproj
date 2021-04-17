@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net471</TargetFramework>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<Version>0.0.1</Version>
+		<PackageId>SharedSitecore.Extensions.ItemExtensions</PackageId>
+		<Description>Sitecore Item Extensions for working with Sitecore Forms: Field, IsExperienceFormsEditMode, ItemUrl, MediauUrl</Description>
+		<Copyright>Copyright © 2020</Copyright>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageProjectUrl>https://github.com/SitecoreDave/SharedSitecore.Extensions.ItemExtensions</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/SitecoreDave/SharedSitecore.Extensions.ItemExtensions</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>sitecore item extensions Sitecore.Data.Items.Item</PackageTags>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\LICENSE">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Sitecore.Kernel" Version="9.3.0" />
+	</ItemGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	  <Exec Command="IF &quot;$(ConfigurationName)&quot; == &quot;Debug&quot; (Powershell.exe -ExecutionPolicy Unrestricted -file D:\repos\SharedSitecore\SharedSitecore.DeploySitecoreProject\Deploy-SitecoreProject.ps1 $(ProjectDir))" />
+	</Target>
+
+</Project>
