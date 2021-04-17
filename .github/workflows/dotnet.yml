@@ -1,4 +1,4 @@
-name: ${{github.workflow}}
+name: SharedSitecore.Extensions.ItemExtensions
 
 on:
   push:
